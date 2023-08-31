@@ -1,0 +1,601 @@
+@font-face {
+    font-family:'Inter', sans-serif;
+    src: url();
+}
+
+*{
+    margin: 0;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    height: 3000px;
+    width: 1300px;
+}
+
+nav {
+  display: none;
+}
+
+.checkbox{
+  display: none;
+}
+
+#blob{
+    background-color: white;
+    height: 400px;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50%,-50%;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: -100000;
+
+    background: linear-gradient(
+      to right,
+      rgb(55, 48, 107),
+      rgb(102, 52, 127),
+      rgb(158, 71, 132),
+      rgb(210, 118, 133)
+    );
+  
+    animation: rotate 15s infinite;
+  }
+  
+@keyframes rotate {
+    from{
+    rotate: 0deg;
+    }
+    
+    50%{
+        scale: 1 1.5;
+    }
+    to{
+    rotate: 360deg;
+    }
+}
+
+#blur{
+    height: 3000px;
+    width: 1440px;
+    position: fixed;
+    z-index: -1;
+    backdrop-filter: blur(100px);
+}
+
+.logo{
+    height: 44px;
+    width: 40px;
+    display: flex;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    align-items: flex-start;
+    z-index: -1;
+    cursor: pointer;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    font-size: 18px;
+    list-style: none;
+    gap: 30px;
+    background: transparent;
+    text-align: center;
+    padding-left: 80px;
+    position: relative;
+}
+
+ul li a {
+    color: white;
+    background: transparent;
+    transition: 0.8s;
+    transform: scale(0.9);
+    font-family: "Inter";
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li a:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #ff0000;
+}
+
+ul li a:hover {
+    color: #ff0000;
+    text-shadow: 0 0 5px #ff1010;
+}
+
+.menu{
+  color: white;
+  display: none;
+  height: 50px;
+  width: 70px;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+}
+
+@media (max-width:900px) {
+
+    body {
+        width: 340px;
+        height: 100px;
+    }
+    .navbar {
+        display: none;
+    }
+
+    .menu {
+      display: block;
+    }
+    .logo{
+        width: 60px;
+        height: 60px;
+    }
+
+    #blob{
+        background-color: white;
+        height: 400px;
+        aspect-ratio: 1;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        translate: -50%,-50%;
+        border-radius: 50%;
+        filter: blur(100px);
+        z-index: -100;
+    
+        background: linear-gradient(
+          to right,
+          rgb(55, 48, 107),
+          rgb(102, 52, 127),
+          rgb(158, 71, 132),
+          rgb(210, 118, 133)
+        );
+      
+        animation: rotate 15s infinite;
+      }
+      
+    @keyframes rotate {
+        from{
+        rotate: 0deg;
+        }
+        
+        50%{
+            scale: 1 1.5;
+        }
+        to{
+        rotate: 360deg;
+        }
+    } 
+  
+    /* hamburger */
+.checkbox {
+  display: none;
+}
+
+.button {
+  position: relative;
+  background-color: black;
+  height: 5rem;
+  width: 5rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 5vh; 
+  right: 5vw; 
+  z-index: 2000;
+  box-shadow: 0 1rem 3rem white;
+  text-align: center; 
+  cursor: pointer;
+}
+
+.background {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 5.5vh; 
+  right: 5.5vw; 
+  background-image: radial-gradient(     rgb(55, 48, 107),
+          rgb(102, 52, 127),
+          rgb(158, 71, 132),
+          rgb(210, 118, 133));
+  z-index: 1000;
+
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+}
+
+.nav {
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -60vw;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
+}
+
+.list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
+  color:white;
+}
+
+.item {
+  margin: 1rem;
+  font-size: 36px;
+}
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  font-size: 3rem;
+  font-weight: 300;
+  padding: 1rem 2rem;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    white 50%
+  );
+  background-size: 220%;
+  transition: all 0.4s;
+}
+
+.link:hover,
+.link:active {
+  color: black;
+  cursor: pointer;
+}
+
+/* functionality */
+.checkbox:checked ~ .background {
+  transform: scale(80);
+}
+.checkbox:checked ~ .nav {
+  opacity: 1;
+  width: 100%;
+  right: 0;
+}
+
+/*  */
+/* styling hamb ICON */
+.icon {
+  position: absolute;
+  background:black;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon,
+.icon::before,
+.icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: gray;
+  display: inline-block;
+}
+
+.icon::before,
+.icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+
+.icon::before {
+  top: -0.8rem;
+}
+.icon::after {
+  top: 0.8rem;
+}
+
+.button:hover icon:before {
+  top: -1rem;
+}
+.button:hover icon::after {
+  top: 1rem;
+}
+
+.checkbox:checked + .button .icon {
+  background-color: transparent;
+}
+
+.checkbox:checked + .button .icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+.checkbox:checked + .button .icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
+}
+
+.serum-info-box{
+    display: block;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    position: relative;
+    top: 50%;
+    left: 8%;
+}
+ .serum-info-box h1{
+    color: white;
+    font-size: 90px;
+    letter-spacing: 1px;
+    padding-top: 40px;
+    letter-spacing: 1px;
+    font-family: "text";
+}
+
+.serum-info-box p{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    row-gap: 20px;
+    padding-top: 20px;
+    text-decoration: none;
+    font-family: "text";
+}
+
+.serum-info-box a{
+    display: inline-block;
+    justify-content:  center;
+    align-items: center;
+    padding-top: 80px;
+    color: rgb(255, 0, 0);
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: "Inter";
+}
+
+@media (max-width:900px) {
+  .serum-info-box{
+    font-family: 'Inter';
+    height: 250px;
+    width: 300px;
+  }
+
+  .serum-info-box h1{
+    font-size: 100px;
+    position: relative;
+    top: 40%;
+    left: 10%;
+  }
+
+  .serum-info-box p{
+    font-size: 50px;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 10%;
+  }
+
+  .serum-info-box a{
+    font-size: 50px;
+    display: inline-block;
+    position: relative;
+    top: 52%;
+    left: 10%;
+  }
+  .serum a{
+    position: relative;
+    top: 100%;
+    left: 100%;
+    
+  }
+}
+.serum{
+    height: 500px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: pointer;
+    z-index: -1;
+}
+
+.info p{
+    display: block;
+    justify-content: left;
+    width: 700px;
+    height: 700px;
+    background: transparent;
+    align-items: center;
+    border-radius: 15px;
+    position: absolute;
+    top: 110%;
+    left: 10%;
+    font-family: "Inter";
+    color: white;
+    font-size: 40px;
+    padding-top: 50px;
+
+    animation: gradient 5s ease infinite;
+
+}
+
+@keyframes gradient {
+    0%{
+        color: red;
+    }
+
+    50%{
+        color: white;
+    }
+
+    100%{
+        color: red;
+    }
+}
+
+.info-text{
+    color: white;
+    font-family: "Inter";
+    font-size: 20px;
+}
+
+.a{
+    display: block;
+    position: absolute;
+    top: 200%;
+    left: 10%;
+}
+
+
+.b{
+    display: block;
+    position: absolute;
+    top: 240%;
+    left: 10%;
+}
+
+.c{
+    display: block;
+    position: absolute;
+    top: 280%;
+    left: 35%;
+  }
+
+.d{
+    display: block;
+    position: absolute;
+    top: 200%;
+    left: 70%;
+}
+
+.e{
+    display: block;
+    position: absolute;
+    top: 240%;
+    left: 70%;
+}
+
+@media (max-width:900px) {
+  .info p{
+    position: absolute;
+    top: 150%;
+    left: 10%;
+  }
+
+  .info-text{
+    font-size: 30px;
+    font-family: 'Inter';
+    font-weight: 600;
+    padding: 20px 20px;
+    height: 100vh;
+    width: 100vh;
+  }
+
+  .a{
+    display: inline-block;
+    position: absolute;
+    top: 250%;
+    left: 10%;
+  }
+
+  .b{
+    display: inline-block;
+    position: absolute;
+    top: 270%;
+    left: 10%;
+  }
+
+  .c{
+    display: inline-block;
+    position: absolute;
+    top: 290%;
+    left: 10%;
+  }
+
+  .d{
+    display: inline-block;
+    position: absolute;
+    top: 310%;
+    left: 10%;
+  }
+
+  .e{
+    display: inline-block;
+    position: absolute;
+    top: 330%;
+    left: 10%;
+  }
+}
+.box2{
+  height: 800px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  position: absolute;
+  top: 300%;
+  left: 10%;
+}
+
+.box2 h1{
+  color: white;
+  font-family: 'Inter';
+  font-size: 40px;
+}
+
+.box2 h1 div{
+  color: rgba(16, 208, 16, 0.823);
+  font-family: 'Inter';
+  font-size: 40px;
+}
+
+.box2 p{
+  font-size: 30px;
+  font-family: 'Inter';
+}
+
+@media (max-width:900px) {
+  .box2{
+    display: inline-block;
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: 600;
+    position: absolute;
+    top: 380%;
+    left: 5%;
+  }
+}
